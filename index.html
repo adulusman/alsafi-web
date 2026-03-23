@@ -18,10 +18,12 @@
     <title>AL SAFI GENERAL TRADING LLC - Best Weighing Scale Solutions in UAE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;700;900&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'">
     <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;700;900&display=swap"
             rel="stylesheet">
     </noscript>
     <link rel="stylesheet" href="styles.css">
@@ -56,19 +58,33 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-sun" id="heroSun"></div>
+        <div class="hero-carousel" id="heroCarousel">
+            <div class="carousel-slide active" style="background-image: url('images/slider4.jpeg');"></div>
+            <div class="carousel-slide" style="background-image: url('images/p1.jpeg');"></div>
+            <div class="carousel-slide" style="background-image: url('images/p2.jpeg');"></div>
+            <div class="carousel-slide" style="background-image: url('images/p7.jpeg');"></div>
+        </div>
         <div class="hero-particles"></div>
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Best Weighing Scale Solutions in UAE</h1>
-                <p class="hero-subtitle">Your trusted partner for precision weighing, automation, and packaging
-                    solutions</p>
-                <div class="hero-buttons">
+                <div class="hero-badge fade-in-up">Premium Weighing & Automation</div>
+                <h1 class="hero-title fade-in-up" style="animation-delay: 0.1s">Your Business Deserves <br><span
+                        class="text-gradient">AL SAFI</span></h1>
+                <p class="hero-subtitle fade-in-up" style="animation-delay: 0.2s">Professional weighing scales, POS
+                    solutions, and complete packaging systems. Expert automation for your business in UAE and Oman.</p>
+                <div class="hero-buttons fade-in-up" style="animation-delay: 0.3s">
                     <a href="#products" class="btn btn-primary">Explore Products</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                    <a href="https://wa.me/971559634355" target="_blank" class="btn btn-whatsapp">WhatsApp Us</a>
+                    <a href="#services" class="btn btn-secondary">Our Services</a>
                 </div>
             </div>
+        </div>
+        <div class="carousel-indicators" id="carouselIndicators">
+            <button class="indicator active" aria-label="Slide 1"></button>
+            <button class="indicator" aria-label="Slide 2"></button>
+            <button class="indicator" aria-label="Slide 3"></button>
+            <button class="indicator" aria-label="Slide 4"></button>
         </div>
         <div class="scroll-indicator">
             <span></span>
@@ -151,94 +167,82 @@
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/p1.jpeg" alt="Professional retail weighing scale for supermarkets and stores"
-                            loading="lazy" width="400" height="300">
+                        <img src="images/p5.jpeg" alt="Customized Semi-Automatic filling systems" loading="lazy"
+                            width="400" height="300">
                     </div>
                     <div class="product-info">
-                        <h2>Retail Weighing Scales</h2>
-                        <p>Precision scales for retail environments</p>
-                        <button class="btn-show-more" data-product="1" data-title="Retail Weighing Scales">Show
+                        <h2>Customized Semi-Automatic filling systems</h2>
+                        <ul
+                            style="list-style-type: disc; padding-left: 1rem; color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; margin-bottom: 1rem;">
+                            <li>Valve bag grout filling machine for 25 kg and 50 kg bags.</li>
+                            <li>Valve bag STUCCO putty filling machine for 25 kg and 50 kg bags.</li>
+                            <li>Open bag Powder filling machine.</li>
+                        </ul>
+                        <button class="btn-show-more" data-product="1" data-title="Filling Systems">Show More</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/p3.png" alt="Industrial weighing scales" loading="lazy" width="400"
+                            height="300">
+                    </div>
+                    <div class="product-info">
+                        <h2>Industrial weighing scales</h2>
+                        <ul
+                            style="list-style-type: disc; padding-left: 1rem; color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; margin-bottom: 1rem;">
+                            <li>Floor scales 1 ton to 10 tons.</li>
+                            <li>Heavy duty platform scales from 150 kg to 600 kg.</li>
+                            <li>Table top weighing scales for labs and misc backoffice weighing needs.</li>
+                        </ul>
+                        <button class="btn-show-more" data-product="2" data-title="Industrial scales">Show More</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/p1.jpeg" alt="Retail weighing scales" loading="lazy" width="400" height="300">
+                    </div>
+                    <div class="product-info">
+                        <h2>Retail weighing scales</h2>
+                        <ul
+                            style="list-style-type: disc; padding-left: 1rem; color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; margin-bottom: 1rem;">
+                            <li>Label printing scales.</li>
+                            <li>Price computing scales.</li>
+                        </ul>
+                        <button class="btn-show-more" data-product="3" data-title="Retail weighing scales">Show
                             More</button>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/p2.jpeg" alt="Point of sale system for restaurants and retail stores"
-                            loading="lazy" width="400" height="300">
+                        <img src="images/p2.jpeg" alt="Customized software applications" loading="lazy" width="400"
+                            height="300">
                     </div>
                     <div class="product-info">
-                        <h2>Software Solutions</h2>
-                        <p>Complete point of sale solutions</p>
-                        <button class="btn-show-more" data-product="2" data-title="Software Solutions">Show
+                        <h2>Customized software applications</h2>
+                        <ul
+                            style="list-style-type: disc; padding-left: 1rem; color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; margin-bottom: 1rem;">
+                            <li>Barcode label and inventory management system for conversion factories.</li>
+                            <li>Customized Barcode weighmetric label printing solution for generating packing list.</li>
+                            <li>Customized Industrial Integrated android solutions for inventory management.</li>
+                        </ul>
+                        <button class="btn-show-more" data-product="4" data-title="Customized software">Show
                             More</button>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/p3.png" alt="Heavy duty industrial weighing scale for warehouses"
-                            loading="lazy" width="400" height="300">
+                        <img src="images/p8.jpeg" alt="Retail Software solutions" loading="lazy" width="400"
+                            height="300">
                     </div>
                     <div class="product-info">
-                        <h2>Industrial Scales</h2>
-                        <p>Heavy-duty scales for industrial use</p>
-                        <button class="btn-show-more" data-product="3" data-title="Industrial Scales">Show More</button>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/p4.png" alt="Dynamic online checkweigher for quality control" loading="lazy"
-                            width="400" height="300">
-                    </div>
-                    <div class="product-info">
-                        <h2>Checkweighers</h2>
-                        <p>Quality control weighing systems</p>
-                        <button class="btn-show-more" data-product="4" data-title="Checkweighers">Show More</button>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/p5.jpeg" alt="Automated powder filling system for industrial applications"
-                            loading="lazy" width="400" height="300">
-                    </div>
-                    <div class="product-info">
-                        <h2>Filling Systems</h2>
-                        <p>Automated filling solutions</p>
-                        <button class="btn-show-more" data-product="5" data-title="Filling Systems">Show More</button>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/p6.jpeg" alt="L-sealer shrink wrapping machine for packaging" loading="lazy"
-                            width="400" height="300">
-                    </div>
-                    <div class="product-info">
-                        <h2>Shrink Wrapping Machines</h2>
-                        <p>Professional packaging equipment</p>
-                        <button class="btn-show-more" data-product="6" data-title="Shrink Wrapping Machines">Show
-                            More</button>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/p7.jpeg" alt="Stretch wrapping machine for pallet packaging" loading="lazy"
-                            width="400" height="300">
-                    </div>
-                    <div class="product-info">
-                        <h2>Stretch Wrapping Machines</h2>
-                        <p>Efficient pallet wrapping solutions</p>
-                        <button class="btn-show-more" data-product="7" data-title="Stretch Wrapping Machines">Show
-                            More</button>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/p8.jpeg" alt="Automatic taping machine for box sealing" loading="lazy"
-                            width="400" height="300">
-                    </div>
-                    <div class="product-info">
-                        <h2>Taping Machines</h2>
-                        <p>Automatic box sealing systems</p>
-                        <button class="btn-show-more" data-product="8" data-title="Taping Machines">Show More</button>
+                        <h2>Retail Software solutions</h2>
+                        <ul
+                            style="list-style-type: disc; padding-left: 1rem; color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; margin-bottom: 1rem;">
+                            <li>Point of sale system for Department store.</li>
+                            <li>Point of sale system for Supermarkets.</li>
+                            <li>Point of sale system for Restaurants.</li>
+                        </ul>
+                        <button class="btn-show-more" data-product="5" data-title="Retail Software">Show More</button>
                     </div>
                 </div>
             </div>

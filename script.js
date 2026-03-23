@@ -83,27 +83,12 @@ const handleScroll = throttle(() => {
         navbar.classList.remove('scrolled');
     }
 
-    // Hero sunset effect
-    if (hero && heroSun) {
-        const maxScroll = 500;
-        const scrollProgress = Math.min(scrollY / maxScroll, 1);
-
+    // Carousel scroll opacity effect if needed
+    if (hero) {
         if (scrollY > 50) {
             hero.classList.add('scrolled');
-            // Gradually fade and move sun down
-            const opacity = 1 - scrollProgress;
-            const translateY = scrollProgress * 200;
-            const scale = 1 - (scrollProgress * 0.5);
-            const blur = 60 + (scrollProgress * 40);
-
-            heroSun.style.opacity = opacity;
-            heroSun.style.transform = `translateX(-50%) translateY(${translateY}px) scale(${scale})`;
-            heroSun.style.filter = `blur(${blur}px)`;
         } else {
             hero.classList.remove('scrolled');
-            heroSun.style.opacity = '1';
-            heroSun.style.transform = 'translateX(-50%) translateY(0) scale(1)';
-            heroSun.style.filter = 'blur(60px)';
         }
     }
 }, 100);
@@ -346,6 +331,73 @@ document.querySelectorAll('.product-card').forEach(card => {
 });
 
 // ============================================
+// Hero Carousel Logic
+// ============================================
+const carouselSlides = document.querySelectorAll('.carousel-slide');
+const indicators = document.querySelectorAll('.indicator');
+let currentSlide = 0;
+let slideInterval;
+
+function initCarousel() {
+    if (carouselSlides.length === 0) return;
+    
+    startSlideTimer();
+
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            goToSlide(index);
+            resetSlideTimer();
+        });
+    });
+}
+
+function goToSlide(index) {
+    if(carouselSlides[currentSlide]) carouselSlides[currentSlide].classList.remove('active');
+    if(indicators[currentSlide]) indicators[currentSlide].classList.remove('active');
+    
+    currentSlide = index;
+    
+    if(carouselSlides[currentSlide]) carouselSlides[currentSlide].classList.add('active');
+    if(indicators[currentSlide]) indicators[currentSlide].classList.add('active');
+}
+
+function nextSlide() {
+    let next = currentSlide + 1;
+    if (next >= carouselSlides.length) next = 0;
+    goToSlide(next);
+}
+
+function startSlideTimer() {
+    slideInterval = setInterval(nextSlide, 5000);
+}
+
+function resetSlideTimer() {
+    clearInterval(slideInterval);
+    startSlideTimer();
+}
+
+// ============================================
+// Scroll Reveal Animations
+// ============================================
+function initScrollAnimations() {
+    const animationObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+                entry.target.style.opacity = '1';
+                animationObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+        el.style.animationPlayState = 'paused';
+        el.style.opacity = '0';
+        animationObserver.observe(el);
+    });
+}
+
+// ============================================
 // Performance: Preload Critical Resources
 // ============================================
 if ('requestIdleCallback' in window) {
@@ -370,6 +422,12 @@ if ('requestIdleCallback' in window) {
 document.addEventListener('DOMContentLoaded', () => {
     // Set initial active nav link
     setActiveLink();
+    
+    // Init Carousel
+    initCarousel();
+    
+    // Init Animations
+    initScrollAnimations();
 
     // Initialize lazy loading - ensure all images are visible
     const lazyImages = document.querySelectorAll('img[loading="lazy"]');
