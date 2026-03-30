@@ -3,5 +3,5 @@ Allow: /
 Disallow: /node_modules/
 
 # XML sitemap (submit in Google Search Console & Bing Webmaster)
-Sitemap: https://www.alsafi.com/sitemap.xml
+Sitemap: https://alsafiemirates.com/sitemap.xml
 

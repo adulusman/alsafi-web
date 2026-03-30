@@ -496,6 +496,43 @@ if (clientsCarousel) {
         carouselWrapper.addEventListener('mouseleave', () => {
             clientsCarousel.style.animationPlayState = 'running';
         });
+
+        // Allow wheel-to-horizontal scroll while hovering carousel
+        carouselWrapper.addEventListener('wheel', (e) => {
+            if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+                e.preventDefault();
+                carouselWrapper.scrollLeft += e.deltaY;
+            } else {
+                carouselWrapper.scrollLeft += e.deltaX;
+            }
+        }, { passive: false });
+
+        // Allow click-and-drag horizontal scrolling
+        let isPointerDown = false;
+        let startX = 0;
+        let startScrollLeft = 0;
+
+        carouselWrapper.addEventListener('mousedown', (e) => {
+            isPointerDown = true;
+            startX = e.pageX - carouselWrapper.offsetLeft;
+            startScrollLeft = carouselWrapper.scrollLeft;
+        });
+
+        window.addEventListener('mouseup', () => {
+            isPointerDown = false;
+        });
+
+        carouselWrapper.addEventListener('mouseleave', () => {
+            isPointerDown = false;
+        });
+
+        carouselWrapper.addEventListener('mousemove', (e) => {
+            if (!isPointerDown) return;
+            e.preventDefault();
+            const x = e.pageX - carouselWrapper.offsetLeft;
+            const walk = (x - startX) * 1.15;
+            carouselWrapper.scrollLeft = startScrollLeft - walk;
+        });
     }
 }
 

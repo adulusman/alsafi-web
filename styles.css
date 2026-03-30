@@ -1337,9 +1337,30 @@ section {
 
 .clients-carousel-wrapper {
     width: 100%;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
     position: relative;
     padding: 3rem 0;
+    cursor: grab;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(148, 163, 184, 0.45) transparent;
+}
+
+.clients-carousel-wrapper:active {
+    cursor: grabbing;
+}
+
+.clients-carousel-wrapper::-webkit-scrollbar {
+    height: 7px;
+}
+
+.clients-carousel-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.clients-carousel-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.4);
+    border-radius: 999px;
 }
 
 .clients-carousel {
@@ -1514,22 +1535,6 @@ section {
     margin-bottom: 2rem;
 }
 
-.footer-logo {
-    margin-bottom: 1rem;
-}
-
-.footer-logo img {
-    background-color: transparent;
-    max-width: 200px;
-    height: auto;
-    object-fit: contain;
-    transition: var(--transition);
-}
-
-.footer-logo img:hover {
-    opacity: 0.8;
-}
-
 .footer-section h3 {
     font-size: 1.25rem;
     margin-bottom: 1rem;
@@ -1673,10 +1678,6 @@ section {
         padding: 1.5rem;
     }
 
-    .footer-logo img {
-        max-width: 180px;
-    }
-
     .whatsapp-button {
         width: 55px;
         height: 55px;
@@ -1710,10 +1711,6 @@ section {
     .client-logo {
         min-width: 150px;
         padding: 1rem;
-    }
-
-    .footer-logo img {
-        max-width: 150px;
     }
 
     .whatsapp-button {
