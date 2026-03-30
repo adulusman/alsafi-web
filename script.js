@@ -548,6 +548,14 @@ document.querySelectorAll('.btn-show-more').forEach(button => {
             window.location.href = 'retail-software.html';
             return;
         }
+        if (productId === 6) {
+            window.location.href = `gallery.html?product=9&title=${productTitle}`;
+            return;
+        }
+        if (productId === 7) {
+            window.location.href = `gallery.html?product=10&title=${productTitle}`;
+            return;
+        }
         window.location.href = `gallery.html?product=${productId}&title=${productTitle}`;
     });
 });

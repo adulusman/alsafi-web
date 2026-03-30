@@ -2052,6 +2052,99 @@ img[loading="lazy"].loaded {
     color: #67e8f9;
 }
 
+/* Weighmetric batching — technical drawings & PDFs */
+.batching-drawing-block {
+    margin-top: 0.5rem;
+}
+
+.batching-drawing-block h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 1rem;
+    letter-spacing: 0.04em;
+}
+
+.batching-drawing-figure {
+    margin: 0 0 2rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.batching-drawing-figure img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.batching-drawing-figure figcaption {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: rgba(226, 232, 240, 0.85);
+    line-height: 1.65;
+    text-align: left;
+}
+
+.batching-pdf-section {
+    margin-top: 2rem;
+}
+
+.batching-pdf-section h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 0.75rem;
+}
+
+.batching-pdf-tools {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.batching-pdf-tools a {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.batching-pdf-tools a:hover {
+    color: #67e8f9;
+}
+
+.batching-pdf-frame-wrap {
+    position: relative;
+    width: 100%;
+    min-height: min(80vh, 900px);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    background: rgba(30, 41, 59, 0.9);
+}
+
+.batching-pdf-frame-wrap iframe {
+    width: 100%;
+    min-height: min(80vh, 900px);
+    border: 0;
+    display: block;
+}
+
+.batching-pdf-fallback {
+    padding: 1.25rem;
+    font-size: 0.9rem;
+    color: rgba(226, 232, 240, 0.75);
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+
+    .batching-pdf-frame-wrap,
+    .batching-pdf-frame-wrap iframe {
+        min-height: 65vh;
+    }
+}
+
 .product-detail-content {
     padding: 0.25rem 0;
 }
