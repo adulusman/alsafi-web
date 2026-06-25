@@ -16,9 +16,10 @@
     --color-text: #18181B;
     --color-text-muted: #71717A;
     --color-border: #E4E4E7;
-    --color-accent: #0D9488;
-    --color-accent-hover: #0F766E;
-    --color-accent-soft: #CCFBF1;
+    --color-accent: #062774;
+    --color-accent-hover: #041A4D;
+    --color-accent-soft: #E8EEF8;
+    --color-accent-light: #A5BBE8;
     --color-dark: #18181B;
     --radius-sm: 8px;
     --radius-md: 12px;
@@ -240,7 +241,7 @@ ul { list-style: none; }
    ============================================ */
 .hero {
     padding: calc(var(--header-h) + 3rem) 0 4rem;
-    background: linear-gradient(160deg, #FAFAF9 0%, #F0FDFA 50%, #FAFAF9 100%);
+    background: linear-gradient(160deg, #FAFAF9 0%, #EEF3FB 50%, #FAFAF9 100%);
     overflow: hidden;
 }
 
@@ -290,7 +291,7 @@ ul { list-style: none; }
 .footer-tagline {
     font-size: 1.05rem;
     font-weight: 700;
-    color: var(--color-accent-soft);
+    color: var(--color-accent-light);
     margin-bottom: 0.35rem;
     letter-spacing: 0.02em;
 }
@@ -403,7 +404,7 @@ ul { list-style: none; }
 .btn-primary:hover {
     background: var(--color-accent-hover);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
+    box-shadow: 0 4px 12px rgba(6, 39, 116, 0.25);
 }
 
 .btn-secondary {
@@ -718,7 +719,7 @@ section {
 .service-card[data-color="red"] { border-left-color: #EF4444; }
 .service-card[data-color="indigo"] { border-left-color: #6366F1; }
 .service-card[data-color="pink"] { border-left-color: #EC4899; }
-.service-card[data-color="teal"] { border-left-color: #14B8A6; }
+.service-card[data-color="teal"] { border-left-color: #062774; }
 
 .service-card:hover {
     box-shadow: var(--shadow-md);
@@ -785,7 +786,7 @@ section {
     letter-spacing: -0.02em;
     line-height: 1;
     margin-bottom: 0.5rem;
-    color: var(--color-accent-soft);
+    color: var(--color-accent-light);
 }
 
 .stat-label {
@@ -940,7 +941,7 @@ section {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.12);
+    box-shadow: 0 0 0 3px rgba(6, 39, 116, 0.12);
 }
 
 .form-group textarea {
