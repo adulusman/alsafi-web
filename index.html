@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <script src="theme.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#FAFAF9">
     <meta name="description"
@@ -32,8 +33,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="preload" as="image" href="images/slider4.jpeg" fetchpriority="high">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+    </noscript>
+    <link rel="preload" as="image" href="images/floor-scale2.jpg" fetchpriority="high">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="images/logo.png">
     <script type="application/ld+json">
@@ -161,23 +166,22 @@
                             rel="noopener noreferrer">WhatsApp us</a>
                     </div>
                 </div>
-                <div class="hero-visual reveal" aria-hidden="true">
+                <div class="hero-visual reveal">
                     <div class="hero-carousel" id="heroCarousel">
                         <div class="carousel-slide active" style="background-image: url('images/floor-scale2.jpg');">
                         </div>
-                        <div class="carousel-slide" style="background-image: url('images/floor-scale1.jpg');"></div>
-                        <div class="carousel-slide" style="background-image: url('images/image-3.png');"></div>
-                        <div class="carousel-slide" style="background-image: url('images/image-4.png');"></div>
-                        <div class="carousel-slide" style="background-image: url('images/tank-batching.png');"></div>
-                        <div class="carousel-slide" style="background-image: url('images/image-8.jpeg');"></div>
-                        <div class="carousel-slide" style="background-image: url('images/Checkweigher.png');"></div>
+                        <div class="carousel-slide" data-bg="images/floor-scale1.jpg"></div>
+                        <div class="carousel-slide" data-bg="images/image-3.png"></div>
+                        <div class="carousel-slide" data-bg="images/image-4.png"></div>
+                        <div class="carousel-slide" data-bg="images/tank-batching.png"></div>
+                        <div class="carousel-slide" data-bg="images/image-8.jpeg"></div>
+                        <div class="carousel-slide" data-bg="images/Checkweigher.png"></div>
                         <div class="carousel-slide"
-                            style="background-image: url('images/Weiging Meachine/4 drum filling machine-2.png');">
-                        </div>
-                        <div class="carousel-slide" style="background-image: url('images/pos-solutions.png');"></div>
-                        <div class="carousel-slide" style="background-image: url('images/track-barcode.png');"></div>
-                        <div class="carousel-slide" style="background-image: url('images/image-1.png');"></div>
-                        <div class="carousel-slide" style="background-image: url('images/slider4.jpeg');"></div>
+                            data-bg="images/Weiging Meachine/4 drum filling machine-2.png"></div>
+                        <div class="carousel-slide" data-bg="images/pos-solutions.png"></div>
+                        <div class="carousel-slide" data-bg="images/track-barcode.png"></div>
+                        <div class="carousel-slide" data-bg="images/image-1.png"></div>
+                        <div class="carousel-slide" data-bg="images/slider4.jpeg"></div>
                     </div>
                     <div class="carousel-indicators" id="carouselIndicators" role="tablist"
                         aria-label="Hero image carousel">

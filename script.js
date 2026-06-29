@@ -237,6 +237,21 @@ const indicators = document.querySelectorAll('.indicator');
 let currentSlide = 0;
 let slideInterval;
 
+function loadSlideImage(slide) {
+    if (!slide || slide.dataset.loaded === 'true') return;
+
+    const url = slide.dataset.bg;
+    if (!url) return;
+
+    slide.style.backgroundImage = `url('${url}')`;
+    slide.dataset.loaded = 'true';
+}
+
+function preloadAdjacentSlides(index) {
+    loadSlideImage(carouselSlides[index]);
+    loadSlideImage(carouselSlides[(index + 1) % carouselSlides.length]);
+}
+
 function goToSlide(index) {
     if (!carouselSlides.length) return;
 
@@ -245,6 +260,8 @@ function goToSlide(index) {
     indicators[currentSlide]?.setAttribute('aria-selected', 'false');
 
     currentSlide = index;
+
+    preloadAdjacentSlides(currentSlide);
 
     carouselSlides[currentSlide]?.classList.add('active');
     indicators[currentSlide]?.classList.add('active');
@@ -267,6 +284,19 @@ function resetSlideTimer() {
 
 function initCarousel() {
     if (!carouselSlides.length) return;
+
+    preloadAdjacentSlides(0);
+
+    const preloadRemaining = () => {
+        carouselSlides.forEach(slide => loadSlideImage(slide));
+    };
+
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(preloadRemaining, { timeout: 4000 });
+    } else {
+        setTimeout(preloadRemaining, 2000);
+    }
+
     startSlideTimer();
 
     indicators.forEach((indicator, index) => {
