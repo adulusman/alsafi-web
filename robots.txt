@@ -2,6 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /node_modules/
 
-# XML sitemap (submit in Google Search Console & Bing Webmaster)
+# Submit each sitemap in its matching Google Search Console property
 Sitemap: https://alsafiemirates.com/sitemap.xml
+Sitemap: https://alsafitrading.com/sitemap-alsafitrading.xml
 
